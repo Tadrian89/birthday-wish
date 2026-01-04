@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>birthday.sh</title>
+<style>
+  body {
+    background-color: #0d1117;
+    color: #00ff9c;
+    font-family: "Courier New", monospace;
+    padding: 20px;
+  }
+  .terminal {
+    max-width: 700px;
+    margin: auto;
+    border: 2px solid #00ff9c;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 156, 0.3);
+  }
+  .cursor {
+    display: inline-block;
+    width: 10px;
+    background: #00ff9c;
+    animation: blink 1s infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="terminal" id="terminal"></div>
+
+<script>
+const lines = [
+  "$ ./birthday.sh",
+  " > Amanda...",
+  " > Your best friend MARTHA🥰 Wishing you a happy birthday today...",
+  " > So i made this cumputer progress...",
+  "Initializing system...",
+  "Loading memories...",
+  "Compiling happiness...",
+  "Today is your birthday...",
+  "",
+  "██████╗ ██╗██████╗ ████████╗██╗  ██╗██████╗  █████╗ ██╗   ██╗", 
+  "██╔══██╗██║██╔══██╗╚══██╔══╝██║  ██║██╔══██╗██╔══██╗╚██╗ ██╔╝",
+  "██████╔╝██║██████╔╝   ██║   ███████║██║  ██║███████║ ╚████╔╝ ",
+  "██╔══██╗██║██╔══██╗   ██║   ██╔══██║██║  ██║██╔══██║  ╚██╔╝  ",
+  "██████╔╝██║██║  ██║   ██║   ██║  ██║██████╔╝██║  ██║   ██║   ",
+  "",
+  "🎉 HAPPY 17TH BIRTHDAY 🎉",
+  "",
+  "Dear Best Coder,",
+  "May your bugs be few,",
+  "your builds succeed,",
+  "and your coffee be strong ☕",
+  "",
+  "You are:",
+  "- Exceptionally brilliant",
+  "- Debugging life like a pro",
+  "- My favorite human ❤️",
+  "",
+  "System Message:",
+  "You mean more to me than any perfect code ever could.",
+  "",
+  "Process completed successfully.",
+  "Press CTRL + C to stop being awesome (not allowed)."
+];
+
+let i = 0;
+const terminal = document.getElementById("terminal");
+
+function typeLine() {
+  if (i < lines.length) {
+    terminal.innerHTML += lines[i] + "<br>";
+    i++;
+    setTimeout(typeLine, 250);
+  } else {
+    terminal.innerHTML += "<span class='cursor'></span>";
+  }
+}
+
+typeLine();
+</script>
+
+</body>
+</html>
